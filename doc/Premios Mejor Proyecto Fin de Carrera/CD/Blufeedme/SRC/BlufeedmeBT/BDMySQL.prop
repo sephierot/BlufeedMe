@@ -1,0 +1,3 @@
+URL:jdbc:mysql://localhost/blufeedme_db
+user:root_blufeedme
+password:1234

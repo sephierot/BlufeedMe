@@ -1,0 +1,410 @@
+@charset "utf-8";
+/*
+ 
+  Copyright 2010 Ángel Daniel Sanjuán Espejo, David Armenteros Escabias.
+ 
+  This file is part of BluFeedMe.
+  
+  BluFeedMe is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+ */
+/* CSS Document */
+
+body{
+	width:100%;
+	margin: 0;	
+	padding:0;
+  	font-family:"Lucida Sans Unicode","Lucida Grande",Helvetica,Arial,sans-serif;
+  	font-size:14px;
+	background-color:#CCC;
+}
+	
+.container{
+	width:85%;
+	max-width:1300px;
+	min-width:800px;
+	margin:auto;
+	height:auto;
+}
+	
+.header{
+	height:210px;
+}
+
+.subheader{
+	height:2em;
+	margin:auto;
+	width:auto;
+	font-size:13px;
+}
+
+.cont{
+	min-height:600px;
+	overflow:auto;
+	border:thin #999 solid;
+	margin:auto;
+	width:75%;
+	background-color:#FFF;
+	padding-top:40px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+ 	box-shadow:4px 4px 3px #999;
+}
+
+.menu{
+	width:800px;
+	margin:auto;
+	height:100%;
+	padding-top:10px;
+}
+
+.pie{
+	clear:both;
+	height:70px;
+	background-color:#FFF;
+	width: 75%;
+	margin:auto;
+	margin-top:15px;
+	margin-bottom:15px;
+	border-bottom-left-radius: 10px; /*CS3*/
+	border-bottom-right-radius: 10px;/*CS3*/
+ 	box-shadow:4px 4px 3px #999;
+	border:thin #999 solid;
+	text-align:left;
+	padding-top:15px;
+	padding-bottom:15px;
+	padding-left:3px;
+	padding-right:3px;}
+	
+.izq{
+	position:relative;
+	float: left;
+	z-index:0;
+	width:600px;
+	text-align:center;
+	color: #696969;
+	font-size:11px;
+	margin-left:5px;
+}
+.derch{
+	position:relative;
+	z-index:1;
+	float:right;
+	width:180px;
+	padding-top:15px;
+	padding-bottom:15px;
+	padding-left:3px;
+	padding-right:3px;
+	margin-right:5px;
+	}
+
+#estado{
+	text-align:right;
+	width:75%;
+	padding-right:100px;
+	padding-top:0px;
+	margin:0 auto;
+	margin-bottom:5px;
+	height:1.2em;
+}
+
+#estado label{
+	margin:0;
+	padding:0;
+	color:#003;
+	font-size:medium;
+	margin-right:8px;
+	text-shadow:#FFF;
+}
+
+.rootmenu{
+	height:150px;
+	text-align:center;
+	padding:0px;
+	margin-bottom:5px;
+	border:thin #999 solid;
+	background-color:#FFF;
+	border-top-left-radius: 20px; /*CS3*/
+	border-top-right-radius: 20px;/*CS3*/
+  	box-shadow:4px 4px 3px #999;
+}
+
+.rootmenu a{
+	display:block;
+	text-decoration:none;
+	height:100%;
+}
+
+.rootmenu ul{
+	margin:auto;
+	padding:0;
+	width:700px;
+	height:100%;
+}
+
+.rootmenu ul,li{
+	list-style:none;}
+
+.rootmenu li{
+	float:left;
+	width:160px;
+	height:100%;
+	position:relative;
+	margin-left:55px;
+	opacity: .55;
+}
+.submenu{
+	height:40px;
+	clear:both;
+	padding:0;
+	margin:0;
+	background-color: #000;
+	opacity: .75;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 40px 35px;
+  	box-shadow:4px 4px 3px #999;
+}
+
+.nav{
+	background-color:transparent;
+	height:40px;
+	clear:both;
+	padding:0;
+	margin:0;
+}
+
+.nav li a{
+	text-decoration:none;
+	display:block;
+	color:#FFF;
+	height:100%;
+}
+
+.nav ul li a:hover{
+	color:#C90;
+}
+.nav ul li a:active{
+	border:none;
+	color:#C90;
+}
+
+.nav ul{
+	margin:0;
+	float:left;
+	padding:0;
+	width:750px;
+	height:100%;
+}
+
+.nav ul,li{
+	list-style:none;
+	height:100%;
+}
+
+.entradamenu a{
+	padding-top:7px;
+	padding-bottom:7px;
+}
+
+.entradamenuL a{
+	padding-top:1px;
+	padding-bottom:13px;
+}
+
+.entradamenuL{
+	margin:0;
+	margin-left:10px;
+	color:#FFF;
+	width:95px;
+	margin-top:0px;
+}
+
+
+.entradamenu{
+	margin:0;
+	margin-left:10px;
+	color:#FFF;
+	width:95px;
+	margin-top:0px;
+}
+
+
+.titulomenu{
+	color:#CCC;
+	margin-right:30px;
+	width:90px;
+	border-right: #666 solid thin;
+	margin-top:7px;
+}
+
+.nav ul li{
+	float:left;
+	position:relative;
+	height:25px;
+	background-color: transparent;
+	padding-top:0px;
+	text-align:center;
+}
+
+#iNoticia{
+	background-image:url(../images/1289135535_Location%20News.png);
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+#iCategoria{
+	background-image:url(../images/1289135802_Library.png);
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+#iBluetooth{
+	background-image:url(../images/bluetooth.png);
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+#loading{
+	margin-top:200px;
+	text-align:center;
+	width:100%;
+}
+
+#bloqformulario{
+	clear:none;
+	margin:auto;
+	width:85%;
+	padding:0px;
+	padding-left:20px;
+}
+
+#bloqformulario label{
+	display:block;
+	font-weight:bold;
+	text-align:right;
+	width:160px;
+	float:left;
+}
+
+#bloqformulario .small{
+	color:#666666;
+	display:block;
+	font-size:11px;
+	font-weight:normal;
+	text-align:right;
+	width:160px;
+}
+
+#mensaje{
+	display:none;
+}
+
+#bloqformulario .campo{
+	width:200px;
+	border:solid 1px #999;
+}
+
+#bloqformulario .boton{
+	float:right;
+	margin-right:10em;
+	margin-top:20px;
+}
+
+.linea{
+	clear:both;
+}
+
+.ui-widget{
+	clear:both;
+	padding-top:30px;
+	padding-bottom:30px;
+}
+
+
+
+#cerrarSesion{
+	text-decoration:none;
+	margin-left:30px;	
+}
+
+#info{
+	padding:50px;
+	clear:both;
+}
+
+.tabla{
+	margin-left:40px;
+	margin-right:40px;
+	margin-bottom: 40px;
+	margin-top:20px;
+	background-color: #E0E7FC;	
+	border-top-left-radius: 10px; /*CS3*/
+	border-top-right-radius: 10px 10px;/*CS3*/
+  	box-shadow:2px 2px 1px #999;
+	padding-left:30px;
+	padding-right:30px;
+	padding-top:20px;
+	padding-bottom:20px;
+}
+
+.cabecera{
+	position:relative;
+	padding-left:30px;
+	padding:10px;
+	background-color:#FFF;
+	border-top-left-radius: 10px; /*CS3*/
+	border-top-right-radius: 10px 10px;/*CS3*/
+	font-size: 16px;
+	font-weight:800;
+	color:#003;
+	margin-top:20px;
+}
+
+.filas{
+	font-weight:700;	
+}
+
+
+.fila0{
+	padding-left:30px;
+	padding:10px;
+	background-color: #F2F2F2;
+	margin-top:2px;
+}
+.fila1{
+	padding-left:30px;
+	padding:10px;
+	background-color: #FFFFC4;	
+	margin-top:2px;
+}
+
+.titulo{
+	margin-left:40px;	
+}
+.titform{
+	margin-left:70px;
+	margin-top:0px;
+	margin-bottom:40px;
+	border-left:solid #666 medium;
+	border-bottom:solid #666 medium;
+	margin-right:75px;
+	height:40px;
+	padding-left: 20px;
+	padding-top: 12px;
+	color:#666;
+	font-size: 28px;
+	font-weight: 500;
+	font-family: "Berlin Sans FB"; 
+	border-bottom-left-radius: 10px; /*CS3*/
+}

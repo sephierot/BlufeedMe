@@ -1,0 +1,3 @@
+Hay que buscar en la pagina de bluecove un apartado que pone Snapshot para descargar la ultima version de los jar tanto de bluecove como de bluez dbus.
+Instalar el paquete dbus-java con version mayor que 2.5. El jar esta en /usr/share/java
+Instalar el paquete de libmatthew-java. Los jars que nos hacen falta estan en /usr/share/java/libmatthew

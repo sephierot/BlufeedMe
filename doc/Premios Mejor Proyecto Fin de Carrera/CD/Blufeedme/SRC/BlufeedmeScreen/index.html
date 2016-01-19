@@ -1,0 +1,238 @@
+<!--
+ 
+  Copyright 2010 Ángel Daniel Sanjuán Espejo, David Armenteros Escabias.
+ 
+  This file is part of BluFeedMe.
+  
+  BluFeedMe is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">      
+  <head>              
+    <title>Noticias: Universidad de Granada</title>
+                                                               
+    <!-- No hace falta con el custom
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui-1.8.2.css"  />
+    <link rel="stylesheet" type="text/css" href="css/jquery.ui.base.css"  />   
+    <link rel="stylesheet" type="text/css" href="css/jquery.ui.core.css"  />
+    <link rel="stylesheet" type="text/css" href="css/jquery.ui.accordion.css"  />
+    -->
+    
+    <link rel="stylesheet" type="text/css" href="css/mscarousel.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui-1.8.2.custom.css" />                    
+    
+    <script type="text/javascript" src="js/jquery-1.4.2-min.js"></script>                    		  
+    <!--<script type="text/javascript" src="js/jquery.msCarousel-min.js"></script>-->
+    <script type="text/javascript" src="js/jquery.msCarousel.js"></script>
+    
+    <script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+    
+    
+    <script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script>                                                  
+    
+    
+    <!-- No hace falta con el custom
+    <script type="text/javascript" src="js/jquery.ui.core.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.widget.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.accordion.js"></script>-->
+
+
+    <script type="text/javascript">
+	  var velocidad_updateXML = 500000;
+      var velocidad_repeticion = 18000;
+      var velocidad_scroll = 2200;
+      var detener_mouseover = false;
+      var tam_menor_pantalla = false;
+      var n_noticias = 0;
+      var indice = 0;
+      var alt_max = 0;
+      var ancho_carousel;
+      var alto_carousel;
+      
+      //Obtenemos las dimensiones de la pantalla
+      //Para que funcione en todos los navegadores
+      if(typeof(window.innerWidth) == 'number'){//No IE
+        ancho_carousel = window.innerWidth-20;
+        alto_carousel = window.innerHeight-16;
+      }
+      else{//IE 6
+        ancho_carousel = document.documentElement.clientWidth-20;
+        alto_carousel = document.documentElement.clientHeight-16;
+      }
+      
+      function AnimacionNoticias(){
+          //Comprobamos si el usuario está interviniendo en la animación (no realizamos la animación)          
+          if(!detener_mouseover){
+            if(tam_menor_pantalla){
+              //Abrimos la siguiente (la anterior se cierra sola)
+              indice = (indice+1) % n_noticias;
+              $("#accordion").accordion("activate", indice);              
+            }
+            else{
+              //Recogemos la noticia actual
+              $("#accordion").accordion("activate", false);
+              
+              //Avanzamos el carousel pero esperando el tiempo necesario para que se cierre la noticia
+              setTimeout('MiCarousel.next();', 1000);
+                        
+              //Esperamos a que se haya avanzado por completo una posicion y desplegamos la noticia actual         
+              setTimeout('$("#accordion").accordion("activate", MiCarousel.getCurrentID());',1000+velocidad_scroll*1.1);
+            }
+          }         
+      };
+      
+      function ObtenerItemsHTML(xml){
+          //Obtenemos array de noticias del xml
+          var $items = jQuery('noticia', xml);
+          var texto_html;
+          
+          //Guardamos el numero de noticia
+          n_noticias = $items.length;
+                      
+		  $('#content').html("");
+		  
+		  $('#content').append('<div id="accordion"> <div id="mycarousel">');          
+          //para cada noticia añadimos su codigo html
+          $items.each(function(){
+            texto_html = '<div class="box"><h3><span class="fecha">'+ $('fecha', $(this)).text()+ '</span>'+
+                          '<a href="#">' + $('titulo', $(this)).text() + 
+                          '</a></h3><div><h4>' + $('subtitulo', $(this)).text() +
+                          '</h4><div class="autor">Publicada por: ' + $('autor', $(this)).text() +
+                          '</div><p>'+ $('texto', $(this)).text() + '</p></div></div>';
+           
+            $('#mycarousel').append(texto_html);
+          });
+		  
+		  $('#content').append("</div> </div>");
+		  
+          //Creación del carousel        
+          MiCarousel = $("#mycarousel").msCarousel({
+              boxClass:'div.box',
+              vertical:true, 
+              width:ancho_carousel, 
+              height:alto_carousel, 
+              loop:true,
+              autoSlide:false,
+              scrollSpeed:velocidad_scroll,
+              showMessage:true,
+              messageClass:'.message',
+              messageOpacity:0.4
+        }).data("msCarousel");
+        
+        //Creación del acordeón
+        $("#accordion").accordion({ header: "h3", collapsible: true, active: indice, autoHeight: false, clearStyle:true});
+                
+        //Añadimos el efecto si se pulsa la rueda de scroll
+        $('#mycarousel').bind('mousewheel', function(event, delta) {
+            var dir = delta > 0 ? 'Up' : 'Down', vel = Math.abs(delta);
+            
+            //Indicamos una mayor velocidad de movimiento
+            MiCarousel.setVelocidad(velocidad_scroll*0.15);
+
+            (dir == 'Up') ? MiCarousel.previous() : MiCarousel.next();
+
+            //Reestablecemos la velocidad original
+            MiCarousel.setVelocidad(velocidad_scroll);
+        });
+
+        //Añadimos el control del evento mouseover (deteniendo la animación)
+        $("#mycarousel").bind("mouseover", function() { detener_mouseover = true; });
+        
+        //Añadimos el control del evento mouseout (reanudamos la animación)
+        $("#mycarousel").bind("mouseout", function() { detener_mouseover = false; });      
+      	
+      	$cuerpos_noticias = $("#mycarousel div.box p.parrafo");
+      	
+      	$cuerpos_noticias.each( function(index){
+      	   //Tomamos la altura con paddings y margins incluidos (true)
+           aux = $(this).outerHeight(true);      	   
+      	   if(aux > alt_max) alt_max = aux;
+         });
+      	
+      	//Ahora realizamos el calculo añadiendo el tamaño de todas las cabeceras
+      	alt_max = alt_max + ($cuerpos_noticias.prev().outerHeight() * n_noticias);
+      	
+      	if(alt_max <= alto_carousel){
+          tam_menor_pantalla = true;
+          //Establecemos que todos tengan la misma altura en el acordeón para mejorar el aspecto de la animación
+          $("#accordion").accordion("option", "autoHeight", true);
+          $("#accordion").accordion("option", "clearStyle", false);
+          $("#accordion").accordion("resize");
+        }
+        else{
+          tam_menor_pantalla = false;
+        }
+      };      
+      
+      
+      function Truncar(str, length, suffix) {
+        if (str.length <= length) return str;
+        if (suffix == undefined) suffix = '...';
+
+        return str.substr(0, length).replace(/\s+?(\S+)?$/g, '') + suffix;
+      };
+      
+        
+      function html_entity_decode(str) {
+          try {
+      		var  tarea=document.createElement('textarea');
+      		tarea.innerHTML = str; return tarea.value;
+      		tarea.parentNode.removeChild(tarea);
+      	} catch(e) {
+      		//for IE add <div id="htmlconverter" style="display:none;"></div> to the page
+      		document.getElementById("htmlconverter").innerHTML = '<textarea id="innerConverter">' + str + '</textarea>';
+      		var content = document.getElementById("innerConverter").value;
+      		document.getElementById("htmlconverter").innerHTML = "";
+      		return content;
+      	}
+      }
+	  
+	  var xml_actual="";
+	  
+	  function updateXML(){
+			$.ajax({
+				url: "generaXML.php",
+				success: function(xml){
+						if(xml != xml_actual){
+							ObtenerItemsHTML(xml);
+							xml_actual = xml;
+						}
+ 					}
+				});
+	  }
+	  
+      $(function(){
+		  
+ 		updateXML();	
+		
+        //Establecemos el tiempo tras el cual cambiara a la siguiente noticia
+        setInterval('AnimacionNoticias()', velocidad_repeticion);
+		
+		//Establecemos el tiempo tras el cual se comprobará si hay noticias nuevas
+		setInterval('updateXML()',velocidad_updateXML);
+		
+      })     
+    </script>
+        
+  </head>
+
+  <body>
+  	<div id="content">
+            <!-- Contenido Dinámico -->      
+    </div>
+  </body>
+</html>

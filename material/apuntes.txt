@@ -1,0 +1,24 @@
+﻿Se crea un proyecto nuevo Java -> Biblioteca de clases de Java
+El nombre del proyecto es ModeloBlufeedme
+Añadir un paquete bluefeedme.modelo
+Dentro de ese paquete añadir otro que es basedatos y dentro de este añadir la interfaz de la base de datos.
+
+
+
+Creacion de un dominio en glassfish
+create-domain --user blufeedme_root --adminport 7777 dominioBlufeedme
+contraseña: 1234
+contraseña maestra predeterminada.
+
+Modificacion del archivo project.propeties añadiendo project.license = ..... y despues añadir el fichero license-Blufeedme.txt con la cabecera de la licencia
+Tambien en herramientas plantillas cambiar las propiedades del usuario.
+Las tablas en postgres deben ser en minuscula para no tener que poner comillas en el codigo para que las coja.Igual pasa con los schemas.
+Para ejecutar un codigo sql se ejecuta el psql.exe dentro de bin de postgres: 
+	psql -U postgres
+	despues se hace \i fichero.sql;
+	\q para salir o Crtl+c
+
+Postgres solo permite crear los schemas en la base de datos con la que estas conectado, por lo tanto el script no funciona porque crea el schema y las tablas dentro de
+la base de datos postgres y no en la nuestra. Para solucionar esto se ha dividido en dos script, uno para crear la BD, usuario y tablespaces y otro para el schema y tablas.
+Se ejecuta primero el script de crear la base de datos (con la conexion con cualquier otra bd como por ejemplo postgres) y a continuacion se desconectaría y se volveria a conectar ahora
+a la que se acaba de crear para poder ejecutar el otro script que nos crearia el schema en sta bd.

@@ -1,0 +1,24 @@
+Operaciones:
+Alta Gestor
+Baja Gestor:
+Modifica Gestor:
+
+Inserta Categoria:
+Borra Categoria:
+Modifica Categoria:
+
+Insertar Noticia:
+Borrar Noticia:
+Modificar Noticia:
+
+Asignar Gestor-Categoria
+
+Colores
+Azul oscuro 14,49,131            #0e3183
+Blanco
+Verde claro 145,204,212	         #91ccd4
+verde-intermedio 74,172,175	 #4aacaf
+Azul claro 152,172,207		 #98accf
+Azul intermedio 93,126,177	 #5d7eb1
+Turquesa verde  36,136,152 	 #248898
+Turquesa azul   55,109,155	 #376d9b

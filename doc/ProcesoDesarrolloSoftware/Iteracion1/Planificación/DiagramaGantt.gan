@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Iteracion 1" company="Blufeedme" webLink="" view-date="2010-10-25" view-index="1" gantt-divider-location="382" resource-divider-location="301" version="2.0">
+    <description><![CDATA[Iteración 1 del desarrollo del proyecto Blufeedme. Se llevará a cabo el desarrollo del subsistema de almacenamiento y del modelo de datos de nuestro sistema. ]]></description>
+    <view zooming-state="default:2" id="gantt-chart"/>
+    <view id="resource-table">
+        <field id="0" name="Nombre" width="94" order="0"/>
+        <field id="1" name="Función" width="5" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <calendar id="1" name="default">
+                <default-week sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+                <overriden-day-types/>
+                <days/>
+            </calendar>
+        </day-types>
+    </calendars>
+    <tasks color="#8cb6ce">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="0" name="Planificación temporal y organizativa" color="#99ff99" meeting="false" start="2010-11-01" duration="2" complete="0" priority="1" expand="true">
+            <depend id="2" type="2" difference="0" hardness="Strong"/>
+            <depend id="4" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="2" name="Diagrama de Gantt" color="#99ff99" meeting="false" start="2010-11-03" duration="1" complete="0" priority="1" expand="true">
+            <depend id="3" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="3" name="Analisis de riesgos" color="#99ff99" meeting="false" start="2010-11-04" duration="2" complete="0" priority="1" expand="true">
+            <depend id="6" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="4" name="Identificación de requisitos funcionales y no funcionales" color="#33ccff" meeting="false" start="2010-11-03" duration="1" complete="0" priority="1" expand="true">
+            <depend id="5" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="5" name="Diagrama casos uso y descripción" color="#33ccff" meeting="false" start="2010-11-04" duration="2" complete="0" priority="1" expand="true">
+            <depend id="7" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="7" name="Identificación subsistemas" color="#33ccff" meeting="false" start="2010-11-08" duration="1" complete="0" priority="1" expand="true">
+            <depend id="19" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="19" name="Identificación requisitos no funcionales" color="#00ccff" meeting="false" start="2010-11-09" duration="1" complete="0" priority="1" expand="true">
+            <depend id="8" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="8" name="Diagrama de clases" color="#33ccff" meeting="false" start="2010-11-10" duration="1" complete="0" priority="1" expand="true">
+            <depend id="9" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="9" name="Determinación Arquitectura" color="#33ccff" meeting="false" start="2010-11-11" duration="1" complete="0" priority="1" expand="true">
+            <depend id="6" type="2" difference="0" hardness="Strong"/>
+            <depend id="14" type="2" difference="0" hardness="Strong"/>
+            <depend id="20" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="20" name="DiagramaPaquetes y componentes,Despliege (Diseño)" color="#00ccff" meeting="false" start="2010-11-12" duration="2" complete="0" priority="1" expand="true">
+            <depend id="10" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="10" name="Diseño de la base de datos (Diagrama E-R)" color="#33ccff" meeting="false" start="2010-11-16" duration="1" complete="0" priority="1" expand="true">
+            <depend id="11" type="2" difference="0" hardness="Strong"/>
+            <depend id="15" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="11" name="Diseño interfaz acceso BD (Clases)" color="#33ccff" meeting="false" start="2010-11-17" duration="1" complete="0" priority="1" expand="true">
+            <depend id="12" type="2" difference="0" hardness="Strong"/>
+            <depend id="16" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="6" name="Revisión documento modelado de requisitos y documento de análisis" color="#66ff66" meeting="false" start="2010-11-12" duration="1" complete="0" priority="1" expand="true">
+            <depend id="12" type="2" difference="0" hardness="Strong"/>
+            <depend id="14" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="12" name="Revisión del documento de diseño" color="#66ff66" meeting="false" start="2010-11-18" duration="2" complete="0" priority="1" expand="true">
+            <depend id="17" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="17" name="Diseño de las pruebas" color="#66ff66" meeting="false" start="2010-11-22" duration="2" complete="0" priority="1" expand="true">
+            <depend id="18" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="13" name="Instalación/configuración" color="#ffcc00" meeting="false" start="2010-11-03" duration="2" complete="0" priority="1" expand="true">
+            <depend id="14" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="14" name="Implementación de modelo y WebService" color="#ffcc00" meeting="false" start="2010-11-15" duration="6" complete="0" priority="1" expand="true">
+            <depend id="15" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="15" name="Implementación de la BD" color="#ffcc00" meeting="false" start="2010-11-23" duration="1" complete="0" priority="1" expand="true">
+            <depend id="16" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="16" name="Implementación interfaz acceso BD" color="#ffcc00" meeting="false" start="2010-11-24" duration="2" complete="0" priority="1" expand="true">
+            <depend id="18" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="18" name="Realización de las pruebas" color="#66ff66" meeting="false" start="2010-11-26" duration="3" complete="0" priority="1" expand="true"/>
+    </tasks>
+    <resources>
+        <resource id="2" name="Daniel" function="Default:1" contacts="" phone=""/>
+        <resource id="3" name="David" function="Default:1" contacts="" phone=""/>
+    </resources>
+    <allocations>
+        <allocation task-id="0" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="0" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="2" resource-id="2" function="Default:1" responsible="true" load="75.0"/>
+        <allocation task-id="3" resource-id="3" function="Default:1" responsible="true" load="50.0"/>
+        <allocation task-id="3" resource-id="2" function="Default:1" responsible="true" load="50.0"/>
+        <allocation task-id="4" resource-id="3" function="Default:1" responsible="true" load="75.0"/>
+        <allocation task-id="5" resource-id="3" function="Default:1" responsible="true" load="25.0"/>
+        <allocation task-id="5" resource-id="2" function="Default:1" responsible="false" load="25.0"/>
+        <allocation task-id="7" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="7" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="19" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="19" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="8" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="8" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="9" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="9" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="20" resource-id="3" function="Default:1" responsible="true" load="25.0"/>
+        <allocation task-id="20" resource-id="2" function="Default:1" responsible="true" load="25.0"/>
+        <allocation task-id="10" resource-id="3" function="Default:1" responsible="true" load="25.0"/>
+        <allocation task-id="10" resource-id="2" function="Default:1" responsible="true" load="25.0"/>
+        <allocation task-id="11" resource-id="3" function="Default:1" responsible="true" load="25.0"/>
+        <allocation task-id="11" resource-id="2" function="Default:1" responsible="true" load="25.0"/>
+        <allocation task-id="6" resource-id="3" function="Default:1" responsible="true" load="75.0"/>
+        <allocation task-id="6" resource-id="2" function="Default:1" responsible="true" load="75.0"/>
+        <allocation task-id="12" resource-id="3" function="Default:1" responsible="true" load="25.0"/>
+        <allocation task-id="12" resource-id="2" function="Default:1" responsible="true" load="25.0"/>
+        <allocation task-id="17" resource-id="3" function="Default:1" responsible="true" load="50.0"/>
+        <allocation task-id="17" resource-id="2" function="Default:1" responsible="true" load="50.0"/>
+        <allocation task-id="13" resource-id="3" function="Default:1" responsible="true" load="25.0"/>
+        <allocation task-id="13" resource-id="2" function="Default:1" responsible="true" load="25.0"/>
+        <allocation task-id="14" resource-id="3" function="Default:1" responsible="false" load="75.0"/>
+        <allocation task-id="14" resource-id="2" function="Default:1" responsible="true" load="75.0"/>
+        <allocation task-id="15" resource-id="3" function="Default:1" responsible="true" load="25.0"/>
+        <allocation task-id="15" resource-id="2" function="Default:1" responsible="true" load="50.0"/>
+        <allocation task-id="16" resource-id="3" function="Default:1" responsible="true" load="25.0"/>
+        <allocation task-id="16" resource-id="2" function="Default:1" responsible="true" load="25.0"/>
+        <allocation task-id="18" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="18" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
+    </allocations>
+    <vacations/>
+    <taskdisplaycolumns>
+        <displaycolumn property-id="tpd3" order="0" width="136"/>
+        <displaycolumn property-id="tpd4" order="1" width="45"/>
+        <displaycolumn property-id="tpd5" order="2" width="44"/>
+    </taskdisplaycolumns>
+    <previous/>
+    <roles roleset-name="Default"/>
+</project>

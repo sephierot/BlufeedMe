@@ -1,0 +1,22 @@
+______________________________________________________________
+PROYECTO FIN DE CARRERA. CURSO 2010/2011
+--------------------------------------------------------------
+
+Los contenidos del disco que se entrega son:
+
+- El directorio SRC: almacena los directorios con el código fuente de los subsistemas que conforman el sistema.
+   - ServicioBlufeedme (Servicio Web NewsService)
+   - BlufeedmeScreen (Subsistema web publicación de noticias pantallas)
+   - ClienteNewService (Cliente del Servicio Web NewsService)
+   - BlufeedmeBT (subsistema publicación noticias Bluetooth)
+   - BD_MySQL (Base de datos central MySQL)
+   - ModeloBlufeedme (Modelo de datos empleado en la implementación de los subsistemas e interfaz de acceso a la Base de Datos)
+
+- El directorio DOC: almacena la documentación JavaDoc de cada uno de los subsistemas implementados en Java.
+   - ServicioBlufeedme
+   - BlufeedmeBT
+   - ModeloBlufeedme
+   
+- El directorio BIN: almacena los archivos .jar y .war del sistema
+   - ServicioBlufeedme.war 
+   - BlufeedmeBT.jar
