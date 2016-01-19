@@ -1,0 +1,2 @@
+# BlufeedMe
+Este software es capaz de enviar las noticias que se encuentran en un almacén a través de Bluetooth a cualquier dispositivo que lo solicite. También es capaz de almacenar nuevas noticias (previa identificación) procedentes de otros sistemas mediante WebServices? (SOAP). Otra característica de este software es la de ofrecernos noticias personales de interés a nuestro móvil mediante la tecnología bluetooth (previo registro e identificación de los usuarios). 
